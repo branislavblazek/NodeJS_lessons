@@ -7,16 +7,17 @@
         <%- include('./partials/nav.ejs') %>
 
             <div class="blogs content">
-                <h3>All blogs</h3>
+                <h2>All blogs</h2>
                 <% if (blogs.length) {%>
                     <% blogs.forEach(blog=> { %>
-
-                        <h3 class="title">
-                            <%= blog.title %>
-                        </h3>
-                        <p class="snippet">
-                            <%= blog.snippet %>
-                        </p>
+                        <a class="single" href="/blogs/<%= blog._id %>">
+                            <h3 class="title">
+                                <%= blog.title %>
+                            </h3>
+                            <p class="snippet">
+                                <%= blog.snippet %>
+                            </p>
+                        </a>
 
                         <% }) %>
                             <% } else { %>
